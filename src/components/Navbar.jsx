@@ -38,13 +38,7 @@ export default function Navbar() {
       <Toolbar sx={{ display: "flex", justifyContent: "space-between", p: 1.1 }}>
         
         {/* ✅ Logo */}
-        <Box component={Link} to="/" sx={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
-            <Box
-            component="img"
-            src="/src/assets/logo.jpg"
-            
-            sx={{ height: 36, width: "auto", mr: 1, borderRadius: "8px" }}
-          />
+        
           <Typography
             sx={{
               fontWeight: 900,
