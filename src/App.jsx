@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import HeroPage from "./components/HeroPage";
 import AboutSection from "./components/AboutPage";
-import HackathonPage from "./components/HackathonesPage";
+import HackathonPage from "./components/HackathonPage";
 import Clubjoinpage from "./components/Clubjoinpage";
 import Gallery from "./components/Gallery";
 import MeetOurTeam from "./components/Clubjoinpage";
