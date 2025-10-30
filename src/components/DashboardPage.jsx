@@ -18,6 +18,7 @@ import { motion } from "framer-motion";
 // --- TEMPORARY CONFIGURATION FOR FRONTEND-ONLY LOGIN AND SUBMISSION ---
 
 // 1. REPLACE THIS WITH YOUR ACTUAL GOOGLE FORM LINK
+// NOTE: I've kept the current URL, assuming it is the correct one you intend to use.
 const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSehoAjL2rIAwcAfjrggQ8kZ1GsfJGB4q7ZH6QWv4JU_eMj8rA/viewform?usp=header";
 
 // 2. HARDCODED TEAM CREDENTIALS (Derived from your list)
@@ -213,11 +214,11 @@ export default function DashboardPage() {
       return;
     }
     
-    // Check if the Google Form URL is set
-    if (GOOGLE_FORM_URL === "https://docs.google.com/forms/d/e/1FAIpQLSehoAjL2rIAwcAfjrggQ8kZ1GsfJGB4q7ZH6QWv4JU_eMj8rA/viewform?usp=header") {
-        setError("Configuration Error: Please set the actual Google Form link in the code (GOOGLE_FORM_URL variable).");
-        return;
-    }
+    // -------------------------------------------------------------------
+    // FIX: Removed the incorrect hardcoded check that was causing the error.
+    // The link will now open regardless of the value, relying on the user
+    // to have updated the GOOGLE_FORM_URL constant above.
+    // -------------------------------------------------------------------
 
     // 1. Simulate Upload (loading state)
     setIsUploading(true);
@@ -253,9 +254,9 @@ export default function DashboardPage() {
     minHeight: "100vh",
     position: "relative",
     background: `radial-gradient(circle at 20% 30%, rgba(0,255,255,0.12) 0%, transparent 25%),
-                 radial-gradient(circle at 80% 20%, rgba(124,58,237,0.15) 0%, transparent 25%),
-                 radial-gradient(circle at 50% 90%, rgba(0,255,133,0.12) 0%, transparent 20%),
-                 #000`,
+               radial-gradient(circle at 80% 20%, rgba(124,58,237,0.15) 0%, transparent 25%),
+               radial-gradient(circle at 50% 90%, rgba(0,255,133,0.12) 0%, transparent 20%),
+               #000`,
     pt: { xs: 10, md: 14 },
     pb: 8,
     display: "flex",
@@ -315,7 +316,7 @@ export default function DashboardPage() {
                   margin="normal"
                   required
                   sx={{ input: { color: "#fff" }, label: { color: "rgba(255,255,255,0.7)" }, 
-                         "& .MuiOutlinedInput-root": { "& fieldset": { borderColor: "rgba(0,255,198,0.3)" }, "&:hover fieldset": { borderColor: "#00FFC6" } } }}
+                        "& .MuiOutlinedInput-root": { "& fieldset": { borderColor: "rgba(0,255,198,0.3)" }, "&:hover fieldset": { borderColor: "#00FFC6" } } }}
                 />
                 <TextField
                   fullWidth
@@ -327,7 +328,7 @@ export default function DashboardPage() {
                   margin="normal"
                   required
                   sx={{ input: { color: "#fff" }, label: { color: "rgba(255,255,255,0.7)" }, 
-                         "& .MuiOutlinedInput-root": { "& fieldset": { borderColor: "rgba(0,255,198,0.3)" }, "&:hover fieldset": { borderColor: "#00FFC6" } } }}
+                        "& .MuiOutlinedInput-root": { "& fieldset": { borderColor: "rgba(0,255,198,0.3)" }, "&:hover fieldset": { borderColor: "#00FFC6" } } }}
                 />
                 <Button
                   type="submit"
