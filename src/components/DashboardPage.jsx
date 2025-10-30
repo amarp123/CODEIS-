@@ -18,7 +18,7 @@ import { motion } from "framer-motion";
 // --- TEMPORARY CONFIGURATION FOR FRONTEND-ONLY LOGIN AND SUBMISSION ---
 
 // 1. REPLACE THIS WITH YOUR ACTUAL GOOGLE FORM LINK
-const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLScvxMGu0WGKf_orEcwNzQB9GwaMW0glb1PwzI2KMV8Am3yI1g/viewform?usp=publish-editor";
+const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/16wXu_T_Ei57hmPSAbwkTwBaGlILhEnwUOyWeODEdYEI/viewform?edit_requested=true";
 
 // 2. HARDCODED TEAM CREDENTIALS (Derived from your list)
 // Added a team_id (index + 1) for local state management
@@ -214,7 +214,7 @@ export default function DashboardPage() {
     }
     
     // Check if the Google Form URL is set
-    if (GOOGLE_FORM_URL === "https://docs.google.com/forms/d/e/1FAIpQLScvxMGu0WGKf_orEcwNzQB9GwaMW0glb1PwzI2KMV8Am3yI1g/viewform?usp=publish-editor") {
+    if (GOOGLE_FORM_URL === "https://docs.google.com/forms/d/16wXu_T_Ei57hmPSAbwkTwBaGlILhEnwUOyWeODEdYEI/viewform?edit_requested=true") {
         setError("Configuration Error: Please set the actual Google Form link in the code (GOOGLE_FORM_URL variable).");
         return;
     }
