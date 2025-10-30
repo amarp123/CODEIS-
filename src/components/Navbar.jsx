@@ -42,7 +42,7 @@ export default function Navbar() {
             <Box
             component="img"
             src="/src/assets/logo.jpg"
-            alt="CODEIS"
+            
             sx={{ height: 36, width: "auto", mr: 1, borderRadius: "8px" }}
           />
           <Typography
