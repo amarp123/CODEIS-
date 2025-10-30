@@ -3,12 +3,20 @@ import { Box, Container, Typography, IconButton } from "@mui/material";
 import { motion } from "framer-motion";
 import { Users as UsersIcon, Award, Linkedin, Instagram } from "lucide-react";
 
-// Team member data with MUI-compatible gradient colors
+// --- HELPER FUNCTION TO GENERATE AVATAR URL ---
+// Encodes the name for the URL and applies the theme colors
+const createAvatarUrl = (name) => {
+    const encodedName = encodeURIComponent(name);
+    // Using a consistent dark background and white text for better visual theme integration
+    return `https://ui-avatars.com/api/?name=${encodedName}&background=0F172A&color=E2E8F0&size=256&font-size=0.33`;
+};
+
+// Team member data with updated image URLs
 const teamMembers = [
   {
     name: "Bharath P",
     role: "President",
-    image: "https://ui-avatars.com/api/?name=Priya+Sharma&background=3b82f6&color=fff&size=256",
+    image: createAvatarUrl("Bharath P"), // Uses BP
     linkedin: "#",
     instagram: "#",
     // Use for the main gradient accents
@@ -19,7 +27,7 @@ const teamMembers = [
   {
     name: "Swaroop P",
     role: "Vice President",
-    image: "https://ui-avatars.com/api/?name=Arjun+Patel&background=8b5cf6&color=fff&size=256",
+    image: createAvatarUrl("Swaroop P"), // Uses SP
     linkedin: "#",
     instagram: "#",
     gradientStart: "#8b5cf6", // purple-600
@@ -29,7 +37,7 @@ const teamMembers = [
   {
     name: "Amar Pujari",
     role: "Technical Head",
-    image: "https://ui-avatars.com/api/?name=Sneha+Reddy&background=ec4899&color=fff&size=256",
+    image: createAvatarUrl("Amar Pujari"), // Uses AP
     linkedin: "#",
     instagram: "#",
     gradientStart: "#ec4899", // pink-600
@@ -39,14 +47,13 @@ const teamMembers = [
   {
     name: "Dhanush Urs M K",
     role: "Events Coordinator",
-    image: "https://ui-avatars.com/api/?name=Rahul+Kumar&background=06b6d4&color=fff&size=256",
+    image: createAvatarUrl("Dhanush Urs M K"), // Uses DUK
     linkedin: "#",
     instagram: "#",
     gradientStart: "#06b6d4", // cyan-600
     gradientEnd: "#3b82f6", // blue-600
     textGradient: "linear-gradient(90deg, #47b2f6, #60a5fa)", // cyan-400, blue-400
   },
-  
 ];
 
 // Helper component for the animated card
@@ -326,43 +333,34 @@ export default function MeetOurTeamPage() {
 
       <Container maxWidth="xl" sx={{ position: "relative", zIndex: 1 }}>
         
-      
+        <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+        >
           
-         
-
-        
-         <motion.div
-                           initial={{ opacity: 0, y: 30 }}
-                           whileInView={{ opacity: 1, y: 0 }}
-                           transition={{ duration: 0.7 }}
-                   >
-         
-         
-                  
-                 <Typography
-                   variant="h4"
-                    align="center"
-                    sx={{
-                       fontWeight: 900, 
-                           background: 'linear-gradient(135deg, #00E5FF, #7C3AED, #00FFC6)',
-                           backgroundSize: '200% auto',
-                           WebkitBackgroundClip: 'text',
-                           WebkitTextFillColor: 'transparent',
-                           backgroundClip: 'text',
-                           mb: 4,
-                           fontSize: { xs: "38px", md: "50px" },
-                           letterSpacing: '-0.02em',
-                           animation: 'shimmer 4s linear infinite',
-                           "@keyframes shimmer": {
-                             "0%": { backgroundPosition: '0% center' },
-                             "100%": { backgroundPosition: '200% center' }
-                           }
-                     }}
-                   
-                 >
-                   Meet Our Team
-                 </Typography>
-                 
+          <Typography
+            variant="h4"
+            align="center"
+            sx={{
+              fontWeight: 900, 
+              background: 'linear-gradient(135deg, #00E5FF, #7C3AED, #00FFC6)',
+              backgroundSize: '200% auto',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+              mb: 4,
+              fontSize: { xs: "38px", md: "50px" },
+              letterSpacing: '-0.02em',
+              animation: 'shimmer 4s linear infinite',
+              "@keyframes shimmer": {
+                "0%": { backgroundPosition: '0% center' },
+                "100%": { backgroundPosition: '200% center' }
+              }
+            }}
+          >
+            Meet Our Team
+          </Typography>
           
           {/* Subtitle */}
           <Typography
@@ -373,22 +371,24 @@ export default function MeetOurTeamPage() {
               color: "#cbd5e1", // text-slate-300
               maxWidth: 768, // max-w-3xl
               mx: "auto",
+              mb: 8, // Added margin bottom for spacing above the grid
             }}
           >
             The passionate individuals driving CodeIS forward
           </Typography>
         </motion.div>
 
-        {/* Team Grid */}
+        {/* Team Grid (UPDATED to show all 4 in one row on large screens) */}
         <Box
           sx={{
             display: "grid",
             gridTemplateColumns: {
-              xs: "1fr",
-              md: "repeat(2, 1fr)",
-              lg: "repeat(3, 1fr)",
+              xs: "1fr", // 1 column on extra-small screens
+              sm: "repeat(2, 1fr)", // 2 columns on small screens
+              lg: "repeat(4, 1fr)", // 4 columns on large screens
             },
             gap: 4,
+            justifyContent: 'center', // Center the grid items if less than 4 columns are active
           }}
         >
           {teamMembers.map((member, index) => (
