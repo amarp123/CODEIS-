@@ -208,47 +208,35 @@ export default function DashboardPage() {
   };
 
   // --- MODIFIED UPLOAD HANDLER (GOOGLE FORM REDIRECT) ---
-  const handleUpload = async () => {
+ const handleUpload = async () => {
     if (!file || !team?.id) {
       setError("Please select a valid PPT or PDF file.");
       return;
     }
-    
-    // -------------------------------------------------------------------
-    // FIX: Removed the incorrect hardcoded check that was causing the error.
-    // The link will now open regardless of the value, relying on the user
-    // to have updated the GOOGLE_FORM_URL constant above.
-    // -------------------------------------------------------------------
 
-    // 1. Simulate Upload (loading state)
+    // 1. Clear any previous messages and show loading state
     setIsUploading(true);
     setError("");
     setSuccess("");
 
-    // Simulate the time it would take to upload a file (2 seconds)
-    await new Promise(resolve => setTimeout(resolve, DUMMY_API_CALL_TIME * 2));
+    // 2. Simulate a brief loading period (1 second)
+    await new Promise(resolve => setTimeout(resolve, DUMMY_API_CALL_TIME));
 
-    setIsUploading(false);
-    
-    // 2. Open Google Form for submission
-    // NOTE: We pass the team info to the Google Form URL to help track the submission
-    // You would need to configure your Google Form to accept this as pre-filled fields.
-    // Replace entry.12345 and entry.67890 with the actual field IDs from your Google Form.
-    const teamNameForUrl = team.leader_name.replace(/ /g, '+');
-    // const formUrl = `${GOOGLE_FORM_URL}?entry.123456789=${teamNameForUrl}&entry.987654321=${file.name}`;
-    
+    // 3. Open Google Form for submission in a new tab
     window.open(GOOGLE_FORM_URL, '_blank');
     
-    // 3. Update local state to show "submitted" status
-    const updatedTeam = { ...team, ppt_path: `/uploads/${file.name}` }; // Use file name as dummy path
+    // 4. Update local state to show "submitted" status
+    const updatedTeam = { ...team, ppt_path: `/uploads/${file.name}` };
     setTeam(updatedTeam);
     localStorage.setItem("team", JSON.stringify(updatedTeam));
-    setFile(null); // Clear the file input
+    
+    // 5. Reset upload state and clear file
+    setIsUploading(false);
+    setFile(null);
 
-    // 4. Show success message
-    setSuccess(`Submission link opened! Please upload your file, **${updatedTeam.leader_name}**, to the Google Form.`);
+    // 6. Show success message
+    setSuccess(`Submission form opened! Please complete the upload in the new tab, ${updatedTeam.leader_name}.`);
   };
-
 
   const commonBoxStyle = {
     minHeight: "100vh",
