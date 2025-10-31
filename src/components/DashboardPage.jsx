@@ -15,14 +15,12 @@ import {
 import { Lock, CloudUpload, CheckCircle, Logout } from "@mui/icons-material";
 import { motion } from "framer-motion";
 
-// --- TEMPORARY CONFIGURATION FOR FRONTEND-ONLY LOGIN AND SUBMISSION ---
+// --- CONFIGURATION ---
 
-// 1. REPLACE THIS WITH YOUR ACTUAL GOOGLE FORM LINK
-// NOTE: I've kept the current URL, assuming it is the correct one you intend to use.
+// REPLACE THIS WITH YOUR ACTUAL GOOGLE FORM LINK
 const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSehoAjL2rIAwcAfjrggQ8kZ1GsfJGB4q7ZH6QWv4JU_eMj8rA/viewform?usp=header";
 
-// 2. HARDCODED TEAM CREDENTIALS (Derived from your list)
-// Added a team_id (index + 1) for local state management
+// HARDCODED TEAM CREDENTIALS
 const RAW_CREDENTIALS = [
     { leader_name: "Chaithanya S", username: "chaithanya_s", password: "ff42d6cb" },
     { leader_name: "S H BHAVYA", username: "s_h_bhavya", password: "91f84499" },
@@ -116,14 +114,13 @@ const RAW_CREDENTIALS = [
     { leader_name: "Nisarga H", username: "nisarga_h", password: "90925e00" }
 ].map((team, index) => ({
     ...team,
-    team_id: index + 1, // Unique ID for each team
-    // Dummy initial state for ppt_path. Set one to a value to test "submitted" state.
-    ppt_path: null, 
+    team_id: index + 1,
+    ppt_path: null,
 }));
 
 const DUMMY_API_CALL_TIME = 1000; // Simulate network latency (1 second)
 
-// --- END TEMPORARY CONFIGURATION ---
+// --- END CONFIGURATION ---
 
 export default function DashboardPage() {
   const [team, setTeam] = useState(
@@ -136,9 +133,6 @@ export default function DashboardPage() {
   const [success, setSuccess] = useState("");
   const [file, setFile] = useState(null);
   const [isUploading, setIsUploading] = useState(false);
-  
-  // Removed unused uploadProgress and API_BASE_URL (not needed for this temporary solution)
-
 
   useEffect(() => {
     // Check local storage on mount
@@ -148,7 +142,7 @@ export default function DashboardPage() {
     }
   }, []);
 
-  // --- MODIFIED LOGIN HANDLER (FRONTEND ONLY) ---
+  // --- LOGIN HANDLER (FRONTEND ONLY) ---
   const handleLogin = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -166,7 +160,6 @@ export default function DashboardPage() {
 
     if (foundTeam) {
       // Success: Log the user in
-      // Ensure the stored team object doesn't include the password
       const teamData = {
           id: foundTeam.team_id,
           leader_name: foundTeam.leader_name,
@@ -207,8 +200,8 @@ export default function DashboardPage() {
     }
   };
 
-  // --- MODIFIED UPLOAD HANDLER (GOOGLE FORM REDIRECT) ---
- const handleUpload = async () => {
+  // --- UPLOAD HANDLER (GOOGLE FORM REDIRECT) ---
+  const handleUpload = async () => {
     if (!file || !team?.id) {
       setError("Please select a valid PPT or PDF file.");
       return;
@@ -384,7 +377,7 @@ export default function DashboardPage() {
 
             <Typography sx={{ color: "rgba(255,255,255,0.8)", mb: 4, lineHeight: 1.7 }}>
               This is where you'll submit your final presentation for the Hackathon.
-              Please ensure your file is in **.ppt** or **.pdf** format. The last file you submit via the Google Form will be considered your final submission.
+              Please ensure your file is in <strong>.ppt</strong> or <strong>.pdf</strong> format. The last file you submit via the Google Form will be considered your final submission.
             </Typography>
 
             <Divider sx={{ my: 4, borderColor: "rgba(255,255,255,0.1)" }} />
@@ -420,7 +413,7 @@ export default function DashboardPage() {
 
               {file && (
                 <Typography variant="body1" component="span" sx={{ color: "rgba(255,255,255,0.9)" }}>
-                  **Selected:** {file.name}
+                  <strong>Selected:</strong> {file.name}
                 </Typography>
               )}
             </Box>
@@ -430,14 +423,13 @@ export default function DashboardPage() {
 
             {team.ppt_path ? (
               <Alert icon={<CheckCircle fontSize="inherit" />} severity="info" sx={{ mb: 3, backgroundColor: 'rgba(0,255,198,0.1)', color: '#00FFC6' }}>
-                **Current Submission Status:** A submission has been recorded locally. You can submit a new file to replace it via the form.
+                <strong>Current Submission Status:</strong> A submission has been recorded locally. You can submit a new file to replace it via the form.
               </Alert>
             ) : (
                 <Alert severity="warning" sx={{ mb: 3 }}>
                     No presentation has been submitted yet.
                 </Alert>
             )}
-
 
             <Button
               variant="contained"
