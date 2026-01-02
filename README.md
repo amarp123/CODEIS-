@@ -1,16 +1,64 @@
-# React + Vite
+CODEIS – Coding & Innovation Society
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🌐 Live Website: https://codeis-4bcd.vercel.app
 
-Currently, two official plugins are available:
+CODEIS (Coding & Innovation Society) is a student-driven technical club website designed to promote coding culture, innovation, collaboration, and technical excellence among students. The website serves as a central digital hub for showcasing club activities, events, achievements, and learning initiatives.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+ Purpose of the Website
 
-## React Compiler
+The CODEIS website aims to:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Build a strong technical community
 
-## Expanding the ESLint configuration
+Encourage coding, problem-solving, and innovation
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Share club updates, events, and achievements
+
+Provide a professional online presence for the club
+
+Act as a bridge between students, mentors, and industry
+
+ Key Features
+ Home Page
+
+Clean and modern landing page
+
+Introduces the vision and mission of CODEIS
+
+Highlights club goals and technical focus areas
+
+ About the Club
+
+Overview of CODEIS
+
+Information about club objectives and values
+
+Encourages student participation and collaboration
+
+Events & Activities
+
+Displays technical events such as:
+
+Coding contests
+
+Hackathons
+
+Workshops
+
+Seminars & tech talks
+
+Helps students stay updated on upcoming events
+
+Team Section
+
+Showcases the core members and coordinators
+
+Builds transparency and leadership visibility
+
+Motivates juniors to join the club
+
+ Announcements & Updates
+
+Central place for club news
+
+Important notices and activity highlights
