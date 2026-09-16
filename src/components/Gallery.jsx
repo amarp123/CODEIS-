@@ -102,7 +102,7 @@ export default function GallerySection() {
               style={{ display: "flex", width: "max-content" }}
               animate={{ x: ["0%", "-50%"] }}
               transition={{
-                x: { repeat: Infinity, duration: 12, ease: "linear" },
+                x: { repeat: Infinity, duration: 25, ease: "linear" },
               }}
             >
               {[...images, ...images].map((img, i) => (
