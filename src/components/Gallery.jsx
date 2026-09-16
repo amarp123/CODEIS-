@@ -10,6 +10,10 @@ import gallery5 from '../assets/gallery5.jpg';
 import gallery6 from '../assets/gallery6.jpg';
 import gallery7 from '../assets/gallery7.jpg';
 import gallery8 from '../assets/gallery8.jpg';
+import gallery9 from '../assets/gallery9.jpg';
+import gallery10 from '../assets/gallery10.jpg';
+import gallery11 from '../assets/gallery11.jpg';
+import gallery12 from '../assets/gallery12.jpg';
 
 const images = [
   gallery1,
@@ -20,6 +24,10 @@ const images = [
   gallery6,
   gallery7,
   gallery8,
+  gallery9,
+  gallery10,
+  gallery11,
+  gallery12,
 ];
 
 export default function GallerySection() {
