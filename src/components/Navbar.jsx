@@ -26,7 +26,6 @@ export default function Navbar() {
     { label: "Hackathons", path: "/hackathons" },
     { label: "Club Gallery", path: "/gallery" },
     { label: "Team", path: "/team" },
-    { label: "Announcements", path: "/dashboard" },
   ];
 
   const handleDrawerToggle = () => {
