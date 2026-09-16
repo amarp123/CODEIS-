@@ -82,7 +82,7 @@ export default function Navbar() {
       <Button
         fullWidth
         variant="contained"
-        href="https://codeis-recrutment.vercel.app"
+        href="https://code-is-recruitment.vercel.app/"
         target="_blank"
         sx={{
           mt: 2,
@@ -174,7 +174,7 @@ export default function Navbar() {
 
             <Button
               variant="contained"
-              href="https://codeis-recrutment.vercel.app"
+              href="https://code-is-recruitment.vercel.app/"
               target="_blank"
               sx={{
                 textTransform: "none",

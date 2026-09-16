@@ -404,7 +404,7 @@ export default function HeroPage() {
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
             >
               <Button
-                href="https://codeis-recrutment.vercel.app"
+                href="https://code-is-recruitment.vercel.app/"
                 target="_blank"
                 variant="contained"
                 sx={{
