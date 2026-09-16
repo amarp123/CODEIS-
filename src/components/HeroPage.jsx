@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Box, Typography, Button, Container } from "@mui/material";
 import { motion } from "framer-motion";
 import { Zap } from "lucide-react"; 
-import codeIsLogo from '/src/assets/logo.jpg';
+import codeIsLogo from '../assets/logo.jpg';
 
 // --- Float3DBackground component remains the same ---
 const Float3DBackground = () => {

@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Container, Typography, Grid, Card, CardMedia, CardContent, Button, Chip } from "@mui/material";
 import { motion } from "framer-motion";
 import { CalendarToday, AccessTime, Group, EmojiEvents, Bolt, TrackChanges } from "@mui/icons-material";
+import hackathonPoster from '../assets/hackathon-poster.jpg';
 
 export default function HackathonPage() {
   return (
@@ -77,7 +78,7 @@ export default function HackathonPage() {
             {/* --- Left Image --- */}
             <CardMedia
               component="img"
-              image="/src/assets/hackathon-poster.jpg"
+              image={hackathonPoster}
               alt="Hackathon Poster"
               sx={{
                 width: { xs: "100%", md: "40%" },

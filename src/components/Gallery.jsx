@@ -2,17 +2,21 @@ import React from "react";
 import { Box, Container, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 
+import gallery1 from '../assets/gallery1.jpg';
+import gallery2 from '../assets/gallery2.jpg';
+import gallery3 from '../assets/gallery3.jpg';
+
 const images = [
-  "/src/assets/gallery1.jpg",
-  "/src/assets/gallery2.jpg",
-  "/src/assets/gallery3.jpg",
-  "/src/assets/gallery2.jpg",
-  "/src/assets/gallery3.jpg",
-  "/src/assets/gallery1.jpg",
-  "/src/assets/gallery2.jpg",
-  "/src/assets/gallery3.jpg",
-  "/src/assets/gallery2.jpg",
-  "/src/assets/gallery3.jpg",
+  gallery1,
+  gallery2,
+  gallery3,
+  gallery2,
+  gallery3,
+  gallery1,
+  gallery2,
+  gallery3,
+  gallery2,
+  gallery3,
 ];
 
 export default function GallerySection() {
