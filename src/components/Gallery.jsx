@@ -14,6 +14,8 @@ import gallery9 from '../assets/gallery9.jpg';
 import gallery10 from '../assets/gallery10.jpg';
 import gallery11 from '../assets/gallery11.jpg';
 import gallery12 from '../assets/gallery12.jpg';
+import gallery13 from '../assets/gallery13.jpg';
+import gallery14 from '../assets/gallery14.jpg';
 
 const images = [
   gallery1,
@@ -28,6 +30,8 @@ const images = [
   gallery10,
   gallery11,
   gallery12,
+  gallery13,
+  gallery14,
 ];
 
 export default function GallerySection() {
