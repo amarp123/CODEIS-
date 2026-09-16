@@ -83,7 +83,7 @@ export default function Navbar() {
       <Button
         fullWidth
         variant="contained"
-        href="https://docs.google.com/forms/YOUR_FORM_LINK"
+        href="https://codeis-recrutment.vercel.app"
         target="_blank"
         sx={{
           mt: 2,
@@ -175,7 +175,7 @@ export default function Navbar() {
 
             <Button
               variant="contained"
-              href="https://docs.google.com/forms/YOUR_FORM_LINK"
+              href="https://codeis-recrutment.vercel.app"
               target="_blank"
               sx={{
                 textTransform: "none",
