@@ -48,6 +48,16 @@ const teamMembers = [
     gradientEnd: "#3b82f6", // blue-600
     textGradient: "linear-gradient(90deg, #47b2f6, #60a5fa)", // cyan-400, blue-400
   },
+  {
+    name: "Amar Pujari",
+    role: "Tech support",
+    image: createAvatarUrl("Amar Pujari"), // Uses AP
+    linkedin: "#",
+    instagram: "#",
+    gradientStart: "#ec4899", // pink-600
+    gradientEnd: "#f43f5e", // rose-600
+    textGradient: "linear-gradient(90deg, #ec6b9d, #f687a4)", // pink-400, rose-400
+  },
 ];
 
 // Helper component for the animated card
