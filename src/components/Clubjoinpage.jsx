@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Container, Typography, IconButton } from "@mui/material";
 import { motion } from "framer-motion";
 import { Users as UsersIcon, Award, Linkedin, Instagram } from "lucide-react";
+import bharathImg from '../assets/bharath.png';
 
 // --- HELPER FUNCTION TO GENERATE AVATAR URL ---
 // Encodes the name for the URL and applies the theme colors
@@ -16,7 +17,7 @@ const teamMembers = [
   {
     name: "Bharath P",
     role: "President",
-    image: createAvatarUrl("Bharath P"), // Uses BP
+    image: bharathImg,
     linkedin: "#",
     instagram: "#",
     // Use for the main gradient accents
