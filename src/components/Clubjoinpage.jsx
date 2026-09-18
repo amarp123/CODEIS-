@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Users as UsersIcon, Award, Linkedin, Instagram } from "lucide-react";
 import bharathImg from '../assets/bharath.png';
 import swaroopImg from '../assets/swaroop.png';
+import dhanushImg from '../assets/dhanush.png';
 
 // --- HELPER FUNCTION TO GENERATE AVATAR URL ---
 // Encodes the name for the URL and applies the theme colors
@@ -40,7 +41,7 @@ const teamMembers = [
   {
     name: "Dhanush Urs M K",
     role: "Technical Head",
-    image: createAvatarUrl("Dhanush Urs M K"), // Uses DUK
+    image: dhanushImg,
     linkedin: "#",
     instagram: "#",
     gradientStart: "#06b6d4", // cyan-600
