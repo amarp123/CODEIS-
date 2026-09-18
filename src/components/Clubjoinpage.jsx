@@ -318,7 +318,8 @@ export default function MeetOurTeamPage() {
             height: 384, // h-96
             background: "rgba(59, 130, 246, 0.1)", // blue-500/10
             borderRadius: "50%",
-            filter: "blur(48px)", // blur-3xl
+            filter: { xs: "blur(24px)", md: "blur(48px)" }, // blur-3xl
+            willChange: "transform",
           }}
         />
         <Box
@@ -330,7 +331,8 @@ export default function MeetOurTeamPage() {
             height: 384, // h-96
             background: "rgba(168, 85, 247, 0.1)", // purple-500/10
             borderRadius: "50%",
-            filter: "blur(48px)", // blur-3xl
+            filter: { xs: "blur(24px)", md: "blur(48px)" }, // blur-3xl
+            willChange: "transform",
           }}
         />
       </Box>

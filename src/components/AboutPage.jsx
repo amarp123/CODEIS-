@@ -178,7 +178,7 @@ export default function AboutSection() {
             sx={{
               position: "relative",
               background: "rgba(5,5,15,0.7)",
-              backdropFilter: "blur(20px)",
+              backdropFilter: { xs: "blur(4px)", md: "blur(20px)" },
               border: "1px solid rgba(0,255,255,0.15)",
               borderRadius: "28px",
               boxShadow: `
@@ -196,11 +196,14 @@ export default function AboutSection() {
                 borderRadius: "28px",
                 padding: '2px',
                 background: 'linear-gradient(135deg, rgba(0,255,198,0.4), rgba(124,58,237,0.4), rgba(0,229,255,0.4))',
+                backgroundSize: "200% auto",
                 WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
                 WebkitMaskComposite: 'xor',
                 maskComposite: 'exclude',
                 opacity: 0.5,
-                animation: 'borderRotate 4s linear infinite',
+                "@media (min-width: 768px)": {
+                  animation: 'borderRotate 4s linear infinite',
+                }
               },
               "@keyframes borderRotate": {
                 "0%": { backgroundPosition: '0% 50%' },
@@ -335,6 +338,7 @@ export default function AboutSection() {
                 filter: 'blur(40px)',
                 animation: 'float 6s ease-in-out infinite',
                 pointerEvents: 'none',
+                willChange: "transform",
               }}
             />
             <Box
@@ -349,6 +353,7 @@ export default function AboutSection() {
                 filter: 'blur(50px)',
                 animation: 'float 8s ease-in-out infinite reverse',
                 pointerEvents: 'none',
+                willChange: "transform",
               }}
             />
           </Box>

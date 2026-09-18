@@ -99,7 +99,7 @@ export default function GallerySection() {
         >
           <Box sx={{ overflow: "hidden", width: "100%", height: "100%" }}>
             <motion.div
-              style={{ display: "flex", width: "max-content", willChange: "transform" }}
+              style={{ display: "flex", width: "max-content", willChange: "transform", transform: "translateZ(0)" }}
               animate={{ x: ["0%", "-50%"] }}
               transition={{
                 x: { repeat: Infinity, duration: 25, ease: "linear" },

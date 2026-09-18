@@ -22,8 +22,9 @@ const Float3DBackground = () => {
     resize();
     window.addEventListener('resize', resize);
 
-    // Reduce particle count significantly on mobile to prevent lag
-    const numParticles = window.innerWidth < 768 ? 35 : 70;
+    // Dramatically reduce particle count on mobile
+    const isMobile = window.innerWidth < 768;
+    const numParticles = isMobile ? 15 : 70;
     const particles = Array.from({ length: numParticles }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
@@ -71,8 +72,10 @@ const Float3DBackground = () => {
         });
       });
 
-      // Multiple 3D cubes
-      const cubes = [
+      // Multiple 3D cubes - reduce to 1 on mobile
+      const cubes = isMobile ? [
+        { x: canvas.width * 0.5, y: canvas.height * 0.3, size: 80, speed: 0.5 },
+      ] : [
         { x: canvas.width * 0.2, y: canvas.height * 0.3, size: 100, speed: 0.5 },
         { x: canvas.width * 0.8, y: canvas.height * 0.4, size: 80, speed: 0.7 },
         { x: canvas.width * 0.6, y: canvas.height * 0.7, size: 60, speed: 0.6 },
@@ -243,18 +246,19 @@ export default function HeroPage() {
         "&::before": {
           content: '""',
           position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
+          top: -60,
+          left: -60,
+          width: 'calc(100% + 120px)',
+          height: 'calc(100% + 120px)',
           background: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%2300FFC6\' fill-opacity=\'0.02\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")',
           opacity: 0.25,
           animation: 'slidePattern 25s linear infinite',
           zIndex: 0,
+          willChange: "transform",
         },
         "@keyframes slidePattern": {
-          "0%": { backgroundPosition: '0 0' },
-          "100%": { backgroundPosition: '60px 60px' }
+          "0%": { transform: 'translate(0, 0)' },
+          "100%": { transform: 'translate(60px, 60px)' }
         }
       }}
     >
