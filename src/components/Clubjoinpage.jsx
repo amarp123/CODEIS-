@@ -15,50 +15,7 @@ const createAvatarUrl = (name) => {
 };
 
 // Team member data with updated image URLs
-const teamMembers = [
-  {
-    name: "Bharath P",
-    role: "President",
-    image: bharathImg,
-    linkedin: "#",
-    instagram: "#",
-    // Use for the main gradient accents
-    gradientStart: "#3b82f6", // blue-600
-    gradientEnd: "#06b6d4", // cyan-600
-    textGradient: "linear-gradient(90deg, #60a5fa, #47b2f6)", // blue-400, cyan-400
-  },
-  {
-    name: "Swaroop P",
-    role: "Vice President",
-    image: swaroopImg,
-    linkedin: "#",
-    instagram: "#",
-    gradientStart: "#8b5cf6", // purple-600
-    gradientEnd: "#ec4899", // pink-600
-    textGradient: "linear-gradient(90deg, #a78bfa, #ec6b9d)", // purple-400, pink-400
-  },
- 
-  {
-    name: "Dhanush Urs M K",
-    role: "Technical Head",
-    image: dhanushImg,
-    linkedin: "#",
-    instagram: "#",
-    gradientStart: "#06b6d4", // cyan-600
-    gradientEnd: "#3b82f6", // blue-600
-    textGradient: "linear-gradient(90deg, #47b2f6, #60a5fa)", // cyan-400, blue-400
-  },
-  {
-    name: "Amar Pujari",
-    role: "Tech support",
-    image: createAvatarUrl("Amar Pujari"), // Uses AP
-    linkedin: "#",
-    instagram: "#",
-    gradientStart: "#ec4899", // pink-600
-    gradientEnd: "#f43f5e", // rose-600
-    textGradient: "linear-gradient(90deg, #ec6b9d, #f687a4)", // pink-400, rose-400
-  },
-];
+const teamMembers = [];
 
 // Helper component for the animated card
 const TeamMemberCard = ({ member, index }) => {
