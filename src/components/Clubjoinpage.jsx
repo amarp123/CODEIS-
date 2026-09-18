@@ -36,7 +36,7 @@ const teamMembers = [
   },
   {
     name: "Amar Pujari",
-    role: "Technical Head",
+    role: "Tech support",
     image: createAvatarUrl("Amar Pujari"), // Uses AP
     linkedin: "#",
     instagram: "#",
