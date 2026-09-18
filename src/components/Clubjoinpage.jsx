@@ -3,6 +3,7 @@ import { Box, Container, Typography, IconButton } from "@mui/material";
 import { motion } from "framer-motion";
 import { Users as UsersIcon, Award, Linkedin, Instagram } from "lucide-react";
 import bharathImg from '../assets/bharath.png';
+import swaroopImg from '../assets/swaroop.png';
 
 // --- HELPER FUNCTION TO GENERATE AVATAR URL ---
 // Encodes the name for the URL and applies the theme colors
@@ -28,7 +29,7 @@ const teamMembers = [
   {
     name: "Swaroop P",
     role: "Vice President",
-    image: createAvatarUrl("Swaroop P"), // Uses SP
+    image: swaroopImg,
     linkedin: "#",
     instagram: "#",
     gradientStart: "#8b5cf6", // purple-600
