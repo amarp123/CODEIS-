@@ -231,8 +231,8 @@ export default function AboutSection() {
                     display: "flex",
                     gap: 24,
                     alignItems: "center",
-                    flexDirection: index % 2 === 0 ? "row" : "row-reverse",
-                    textAlign: index % 2 === 0 ? "left" : "right"
+                    flexDirection: { xs: "column", sm: index % 2 === 0 ? "row" : "row-reverse" },
+                    textAlign: { xs: "center", sm: index % 2 === 0 ? "left" : "right" }
                   }}
                 >
                   <motion.div

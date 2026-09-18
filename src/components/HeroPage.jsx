@@ -226,7 +226,7 @@ export default function HeroPage() {
       ref={heroRef} // Attach ref for mouse position
       sx={{
         // Keeps height locked to viewport, enabling centering
-        height: "100vh", 
+        minHeight: "100vh", 
         position: "relative",
         overflow: "hidden",
         background: `

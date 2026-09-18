@@ -94,7 +94,7 @@ export default function GallerySection() {
             width: "100%",
             maxWidth: 1200,
             mx: "auto",
-            height: 380,
+            height: { xs: 280, sm: 380 },
           }}
         >
           <Box sx={{ overflow: "hidden", width: "100%", height: "100%" }}>
@@ -112,9 +112,9 @@ export default function GallerySection() {
                   src={img}
                   alt="gallery"
                   sx={{
-                    width: 380,
-                    minWidth: 380,
-                    height: 380,
+                    width: { xs: 280, sm: 380 },
+                    minWidth: { xs: 280, sm: 380 },
+                    height: { xs: 280, sm: 380 },
                     objectFit: "cover",
                     borderRadius: 0,
                     flexShrink: 0,
