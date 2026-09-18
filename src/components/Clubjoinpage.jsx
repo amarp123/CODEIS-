@@ -46,7 +46,7 @@ const teamMembers = [
   },
   {
     name: "Dhanush Urs M K",
-    role: "Events Coordinator",
+    role: "Technical Head",
     image: createAvatarUrl("Dhanush Urs M K"), // Uses DUK
     linkedin: "#",
     instagram: "#",
