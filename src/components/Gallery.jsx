@@ -44,7 +44,7 @@ export default function GallerySection() {
                      radial-gradient(circle at 80% 20%, rgba(124,58,237,0.15) 0%, transparent 25%),
                      radial-gradient(circle at 50% 90%, rgba(0,255,133,0.12) 0%, transparent 20%),
                      #000`,
-        backgroundAttachment: "fixed",
+        backgroundAttachment: "scroll",
       }}
     >
       <Container maxWidth="lg">
@@ -99,7 +99,7 @@ export default function GallerySection() {
         >
           <Box sx={{ overflow: "hidden", width: "100%", height: "100%" }}>
             <motion.div
-              style={{ display: "flex", width: "max-content" }}
+              style={{ display: "flex", width: "max-content", willChange: "transform" }}
               animate={{ x: ["0%", "-50%"] }}
               transition={{
                 x: { repeat: Infinity, duration: 25, ease: "linear" },

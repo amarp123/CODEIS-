@@ -22,7 +22,9 @@ const Float3DBackground = () => {
     resize();
     window.addEventListener('resize', resize);
 
-    const particles = Array.from({ length: 150 }, () => ({
+    // Reduce particle count significantly on mobile to prevent lag
+    const numParticles = window.innerWidth < 768 ? 35 : 70;
+    const particles = Array.from({ length: numParticles }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
       size: Math.random() * 3 + 1,
