@@ -4,14 +4,11 @@ import Navbar from "./components/Navbar";
 import HeroPage from "./components/HeroPage";
 import AboutSection from "./components/AboutPage";
 import HackathonPage from "./components/Hackathonespage";
-import Clubjoinpage from "./components/Clubjoinpage";
 import Gallery from "./components/Gallery";
-import MeetOurTeam from "./components/Clubjoinpage";
 import FooterSection from "./components/FooterSection";
 import DashboardPage from "./components/DashboardPage";
 
 import { Box } from "@mui/material";
-
 
 function Home() {
   return (
@@ -20,9 +17,7 @@ function Home() {
       <AboutSection />
       <HackathonPage />
       <Gallery />
-      <Clubjoinpage />
       <FooterSection />
-
     </>
   );
 }
@@ -38,7 +33,6 @@ export default function App() {
         <Route path="/about" element={<AboutSection />} />
         <Route path="/hackathons" element={<HackathonPage />} />
         <Route path="/gallery" element={<Gallery />} />
-        <Route path="/team" element={<MeetOurTeam />} />
         <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="/footer" element={<FooterSection />} />
         
