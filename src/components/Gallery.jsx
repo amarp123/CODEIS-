@@ -39,7 +39,8 @@ export default function GallerySection() {
     <Box
       component="section"
       sx={{
-        py: 12,
+        pt: 12,
+        pb: 6,
         background: `radial-gradient(circle at 20% 30%, rgba(0,255,255,0.12) 0%, transparent 25%),
                      radial-gradient(circle at 80% 20%, rgba(124,58,237,0.15) 0%, transparent 25%),
                      radial-gradient(circle at 50% 90%, rgba(0,255,133,0.12) 0%, transparent 20%),
